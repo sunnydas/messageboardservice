@@ -1,0 +1,41 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.2.1.RELEASE")
+    }
+}
+
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.0.5.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.7.RELEASE'
+    id 'com.google.cloud.tools.jib' version '1.8.0'
+}
+
+group 'messageboard'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+bootJar {
+    mainClassName = 'com.sunny.service.messageboard.MessageBoardApplication'
+    baseName = 'message-board-service'
+    version =  '0.1.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-dependencies:2.0.5.RELEASE'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation group: 'com.h2database', name: 'h2', version: '1.4.200'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    runtime group: 'com.h2database', name: 'h2', version: '1.4.200'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-parent', version: '2.2.2.RELEASE', ext: 'pom'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
