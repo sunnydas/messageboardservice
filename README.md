@@ -132,6 +132,12 @@ The message board service provides the following REST APIs:
    ```
       docker run -p 9099:9099 -t sunny/message-board-docker
    ```    
+## Run Instructions
+
+1. By default the application runs on port 9090, for example:
+   ```
+      localhost:9099/api/v1/messageboard/messages/1
+   ```
    
 ## Technology stack
 
