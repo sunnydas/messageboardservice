@@ -60,7 +60,7 @@ The message board service provides the following REST APIs:
    This API provides the functionality of modifying a message on behalf of a client.
    ```
        Resource: /api/v1/messageboard/messages/{clientId}/{messageId}
-	   HTTP Verb: POST
+	   HTTP Verb: PUT
 	   Request Body Example: 
 	   {
 		"messageText": "hello world",
